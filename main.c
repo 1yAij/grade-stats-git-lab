@@ -6,5 +6,9 @@ int main(void) {
     size_t n = sizeof(scores) / sizeof(scores[0]);
     printf("Total: %d\n", sum(scores, n));
     printf("Average: %.2f\n", (double)sum(scores, n) / n);
+    int maximum = scores[0];
+    for (size_t i = 1; i < n; ++i)
+        if (scores[i] > maximum) maximum = scores[i];
+    printf("Maximum: %d\n", maximum);
     return 0;
 }
